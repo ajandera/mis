@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}XXX}{3}{}%
+\contentsline {section}{\numberline {2}Advanced methods in Graph Theory}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Network flow}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Basic Components of Network Flow}{3}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}Key Concepts}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Graph Coloring}{4}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Types of Graph Coloring}{5}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Key Concepts and Theorems}{5}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}Algorithms for Graph Coloring}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Dynamic Graphs}{7}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}Key Concepts}{7}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}Analytical Challenges}{8}{}%
+\contentsline {subsubsection}{\numberline {2.3.3}Problems and Algorithms in Dynamic Graphs}{8}{}%
