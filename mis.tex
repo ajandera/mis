@@ -17,7 +17,7 @@
 {\textbf{Mathematical method for identification, modelling and simulation}}\\
 }
 \author{Ing. Ales Jandera}
-\date{11. May 2024}
+\date{11. July 2024}
 
 \begin{document}
 
@@ -29,7 +29,142 @@
 
 \newpage
 
-\section{XXX}
+\section{Advanced mathematical methods for decision and planning}
+Advanced mathematical methods for decision-making and planning are crucial
+in various fields, including operations research, economics, engineering,
+and artificial intelligence. These methods involve sophisticated mathematical
+techniques to analyze, model, and solve complex problems. Here are some key methods:
+
+\subsection{Linear Programming (LP)}
+Linear Programming involves optimizing a linear objective function subject to
+linear equality and inequality constraints~\cite{vanderbei2020linear}. The objective function represents a goal
+such as maximizing profit or minimizing cost. The constraints represent limitations
+or requirements, such as resource capacities, production capabilities, or budget
+limits. By mathematically modeling these objectives and constraints, linear
+programming helps identify the best possible outcome within the feasible region
+defined by the constraints. It's widely used in resource allocation, production
+planning, and logistics, providing valuable insights into how to efficiently
+distribute limited resources, schedule production runs, and manage supply chains.
+Additionally, linear programming can be applied to areas like transportation, where
+it aids in determining the most cost-effective routes for delivery, and in finance,
+where it helps in portfolio optimization to maximize returns or minimize risk.\\
+\\
+Example of using the method:\\
+Maximize\\\[ Z = c_1x_1 + c_2x_2 + \ldots + c_nx_n \]\\
+Subject to:\\
+\[ a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \leq b_1 \]
+\[ a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \leq b_2 \]
+\[ \vdots \]
+\[ a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \leq b_m \]
+\[ x_i \geq 0 \text{ for all } i \]
+
+\subsection{Dynamic Programming (DP)}
+Dynamic Programming solves complex problems by breaking them down into simpler
+subproblems, addressing each subproblem only once and storing its solution~\cite{bellman1957dynamic}.
+This approach avoids the redundant computations typical of naive recursive methods.
+Dynamic Programming is particularly useful for problems with overlapping subproblems,
+where the same subproblems arise multiple times, and optimal substructure properties,
+where the optimal solution to the problem can be constructed from optimal solutions
+to its subproblems. Applications of Dynamic Programming span various fields,
+including computer science for algorithm design, operations research for resource
+management, economics for decision-making, and bioinformatics for sequence alignment.
+Classic examples include the Fibonacci sequence, shortest path problems like
+Dijkstra's algorithm, knapsack problems, and dynamic programming on trees.
+By structuring these problems into a systematic framework, Dynamic Programming
+provides efficient and scalable solutions, making it a powerful tool in both
+theoretical and applied contexts.\\
+\\
+Example of using the method:\\
+\\
+Fibonacci sequence calculation:\\
+\[ F(n) = F(n-1) + F(n-2) \]
+With base cases:\\
+\[ F(0) = 0, F(1) = 1 \]
+
+\subsection{Markov Decision Processes (MDPs)}
+Decision-making in situations where outcomes are partly random and partly under
+the control of a decision maker~\cite{puterman1994markov}.
+An MDP is defined by its states, actions, transition probabilities, and rewards.
+The decision maker, or agent, chooses actions based on the current state, and
+transitions to a new state according to the transition probabilities, receiving a
+reward associated with the action taken. The goal is to find a policy, a mapping
+from states to actions, that maximizes the expected cumulative reward over time.
+MDPs are widely used in robotics for path planning and control, in economics for
+modeling decision-making under uncertainty, and in artificial intelligence,
+particularly in reinforcement learning, where agents learn optimal policies through
+interactions with the environment. The framework of MDPs allows for the formalization
+and solution of a wide range of sequential decision-making problems, making them a
+fundamental tool in both theoretical research and practical applications.\\
+
+Consists of:
+\begin{itemize}
+    \item States \( S \)
+    \item Actions \( A \)
+    \item Transition probabilities \( P(s'|s,a) \)
+    \item Rewards \( R(s,a) \)
+    \item Policy \( \pi(s) \)
+\end{itemize}
+
+\subsection{Game Theory}
+Game Theory studies strategic interactions between decision-makers, where the outcome
+for each participant or player depends on the actions of all involved~\cite{osborne1994course}. It provides a
+framework for understanding and analyzing situations where players make decisions
+that are interdependent, leading to outcomes that depend on the choices of others.
+Game theory covers a variety of games, including cooperative and non-cooperative
+games, zero-sum and non-zero-sum games, and games of complete and incomplete
+information. It is used in economics to model market behavior, in political science
+to analyze voting systems and strategy, and in evolutionary biology to study the
+evolution of cooperation and competition among species. Game theory also finds
+applications in areas like computer science for algorithm design, network security,
+and artificial intelligence, particularly in multi-agent systems. Concepts such as
+Nash equilibrium, dominant strategies, and Pareto efficiency are central to game
+theory, providing insights into how rational players would behave in strategic
+situations, and guiding the design of mechanisms and systems for optimal
+decision-making.\\
+\\
+Example:\\
+Prisoner's Dilemma, where two players can either cooperate or defect.
+Both cooperate: each gets 3 points. Both defect: each gets 1 point.
+One cooperates, the other defects: cooperator gets 0, defector gets 5.
+
+\subsection{Bayesian Decision Theory}
+Bayesian Decision Theory incorporates probabilistic models to make decisions, providing a rigorous
+framework for statistical decision-making and machine learning~\cite{berger1985statistical}. It leverages Bayes'
+theorem to update the probability estimates of outcomes based on new evidence.
+The key components of Bayesian Decision Theory include prior probabilities, which
+represent initial beliefs about the likelihood of outcomes; likelihoods, which describe
+the probability of observing the evidence given an outcome; and posterior probabilities,
+which are updated beliefs after considering the evidence. Decision rules are then used
+to select the action that maximizes expected utility or minimizes expected loss based
+on these posterior probabilities. This theory is foundational in many areas, including
+medical diagnosis, where it helps in assessing the probability of diseases given
+symptoms; finance, for updating investment strategies based on market data; and machine 
+learning, particularly in Bayesian inference methods, where models are continuously
+refined as more data becomes available. By incorporating uncertainty and learning from
+data, Bayesian Decision Theory provides a powerful approach to making informed and
+rational decisions in uncertain environments. Components: Prior probabilities, Likelihoods,
+Posterior probabilities, Decision rules.
+
+\subsection{Reinforcement Learning (RL)}
+Reinforcement Learning involves agents learning to make decisions by interacting with an
+environment~\cite{sutton2018reinforcement}. The agent takes actions in the environment and receives feedback in the
+form of rewards or penalties. The goal of the agent is to learn a policy, which is a
+mapping from states to actions, that maximizes the cumulative reward over time.
+Reinforcement Learning is a key area in artificial intelligence and robotics, where it
+is used to develop systems that can adapt and improve their performance through
+experience. This approach is based on the principles of trial and error, and involves
+exploring the environment to discover which actions yield the highest rewards.
+Key concepts in reinforcement learning include the value function, which estimates
+the expected reward for each state; the Q-function, which estimates the expected
+reward for state-action pairs; and algorithms such as Q-learning, policy gradients,
+and deep reinforcement learning, which combine reinforcement learning with deep neural
+networks. Applications of reinforcement learning span various domains, including
+autonomous vehicles, game playing (e.g., AlphaGo), robotic control, and personalized
+recommendations, showcasing its versatility and power in solving complex decision-making
+problems.\\
+\\
+Q-Learning algorithm:
+\[ Q(s,a) \leftarrow Q(s,a) + \alpha [r + \gamma \max_{a'} Q(s',a') - Q(s,a)] \]
 %
 %
 \section{Advanced methods in Graph Theory}
@@ -53,13 +188,15 @@
 
     \subsubsection{Basic Components of Network Flow}
 
+    For our purpose as in operations research, we will use terminologyu as a directed
+    graph is called a network, the vertices are called nodes and the edges are called arcs.
     \textbf{Directed Graph} used for a network flow problem where each edge has
     a capacity and each node is either a source, a sink, or an intermediate node.
     Nodes represent junction points, and edges represent paths that the flow can take.
-    Source are the origin node from where the flow starts and th sink is the
-    destination node where the flow is intended to end. Each edge in the network has
-    an associated capacity, which is the maximum flow that the edge can handle.\\
-    \\
+    Source are the origin node from where the flow starts and the sink is the
+    destination node~\cite{diestel2017graph} where the flow is intended to end. Each edge in the network has
+    an associated capacity, which is the maximum flow that the edge can handle.
+    
     \textbf{Flow} is the amount of stuff (e.g., data, goods, traffic) that passes along the edges.
     It must satisfy \textbf{Capacity Constraint condition} that flow on an edge cannot
     exceed the capacity of the edge and 
@@ -68,22 +205,18 @@
 
     \subsubsection{Key Concepts}
 
-    \textbf{Maximum Flow} is the main problem in network flow is to determine the
+    \textbf{Maximum Flow} is the main problem in network flow to determine the
     maximum flow from the source to the sink without exceeding the capacities
-    of the edges. Algorithms like the Ford-Fulkerson method, the Edmonds-Karp
-    algorithm, and the Dinic's algorithm are designed to solve this problem.\\
-    \\
-    \textbf{Flow Value} is the total amount of flow that leaves the source or
-    enters the sink (these two numbers are equal due to the conservation of flow).\\
-    \\
+    of the edges. \textbf{Flow Value} is the total amount of flow that leaves
+    the source or enters the sink (these two values are equal due to the
+    conservation of flow).
+    
     \textbf{Residual Network} is constructed from the original flow network by
     including residual capacities which indicate additional possible flow on an
-    edge given the current flow.\\
-    \\
-    \textbf{Augmenting Path} in the residual network is a path from the source
-    to the sink along which additional flow can be pushed to increase the overall
-    flow in the network.\\
-    \\
+    edge given the current flow. \textbf{Augmenting Path} in the residual network
+    is a path from the source to the sink along which additional flow can be pushed
+    to increase the overall flow in the network.
+    
     \textbf{Cut} in a network is a partition of the vertices into two disjoint subsets
     that separate the source from the sink. The capacity of the cut is the sum of
     the capacities of the edges that are directed from the subset containing the
@@ -95,18 +228,19 @@
     Graph coloring is a fundamental concept in graph theory, which involves assigning
     colors to elements of a graph under certain constraints. The most common form
     of graph coloring is vertex coloring, where colors are assigned to vertices
-    such that no two adjacent vertices share the same color. This concept
+    such that no two adjacent vertices has the same color. This concept
     is not only pivotal in theoretical mathematics but also has practical
     applications in areas such as scheduling, networking, and the allocation
     of resources.
 
     \subsubsection{Types of Graph Coloring}\label{color}
 
-    The goal of \textbf{Vertex Coloring} is to color the vertices of a graph such
-    that no two adjacent vertices share the same color. The minimum number of colors
-    needed to achieve this is known as the graph's chromatic number.\\
-    For a proper vertex coloring using \( k \) colors in a graph \( G \) with
-    vertex set \( V \), the coloring function \( c \) can be described as:
+    The minimum number of colors needed to achieve \textbf{Vertex Coloring} is
+    known as the graph's chromatic number.\\ Proper vertex coloring is a concept
+    in graph theory where the vertices of a graph are colored in such a way that
+    no two adjacent vertices share the same color. For a proper vertex coloring
+    using \( k \) colors in a graph \( G \) with vertex set \( V \), the coloring
+    function \( c \) can be described as:
     \begin{equation}
         c: V \rightarrow \{1, 2, ..., k\}
     \end{equation}
@@ -114,9 +248,9 @@
     \begin{equation}
         c(u) \neq c(v)
     \end{equation}
-    \textbf{Edge Coloring} is similar to vertex coloring but applies to edges.
-    Here, no two adjacent edges (edges sharing a common vertex) can have the same
-    color. The minimum number of colors needed for an edge coloring of a graph is called the
+    \textbf{Edge Coloring} incident similar to vertex coloring but applies to edges.
+    Here, no two edges sharing a common vertex, can have the same color.
+    The minimum number of colors needed for an edge coloring of a graph is called the
     chromatic index \( \chi'(G) \). For a graph \( G = (V, E) \) with vertex
     set \( V \) and edge set \( E \), and a given number of colors \( k \), an edge
     coloring is a function:
@@ -129,7 +263,7 @@
         c(e_1) \neq c(e_2)
     \end{equation}
     \\
-    \textbf{Face Coloring} is relevant in planar graphs where faces (the regions
+    \textbf{Face Coloring} is used in planar graphs where faces (the regions
     bounded by edges) must be colored in such a way that no two faces sharing a
     boundary segment have the same color. This is directly related to the
     Four Color Theorem~\ref{fct}, which states that four colors are sufficient to color
@@ -139,7 +273,9 @@
 
     \textbf{Four Color Theorem}\label{fct} is one of the most famous theorems in
     graph theory, it states that four colors are sufficient to color the vertices
-    of any planar graph so that no two adjacent vertices share the same color.
+    of any planar graph so that no two adjacent vertices use the same color.
+    A planar graph is a graph that can be embedded in the plane, meaning it can
+    be drawn on a flat surface without any of its edges crossing each other
     For any planar graph \( G \) can be phrased as:
     \begin{equation}
         \chi(G) \leq 4
@@ -147,14 +283,8 @@
     \\
     \textbf{Brooks' Theorem} provides a bound on the chromatic number of a graph.
     It states that any connected graph other than a complete graph or an odd cycle
-    has chromatic number at most $\Delta$ (the maximum degree of the graph):
-    \begin{equation}
-        \chi(G) \leq \Delta + 1
-    \end{equation}
-    However, if \( G \) is neither a complete graph nor an odd cycle:
-    \begin{equation}
-            \chi(G) \leq \Delta.
-    \end{equation}
+    has chromatic number at most $\Delta$ (the maximum degree of the graph).
+    
     \textbf{Hall's Marriage Theorem} often used in edge coloring and matching problems, it provides a condition
     that guarantees the existence of a perfect matching in bipartite graphs,
     which is directly related to the graph coloring problem~\ref{color}.
@@ -164,8 +294,6 @@
     \begin{equation}
             |N(S)| \geq |S|
     \end{equation}
-    This theorem helps in determining if it's possible to match edges (or jobs to
-    timeslots, etc.) without overlap, effectively a coloring problem on the edges.
 
     \subsubsection{Algorithms for Graph Coloring}
 
@@ -183,9 +311,7 @@
     \\
     \textbf{Backtracking Algorithm} is a more exhaustive approach that can find the
     chromatic number of a graph but may be computationally expensive for large graphs.
-    The chromatic number \( \chi(G) \) of a graph \( G \) is the smallest number
-    of colors needed to color the vertices of \( G \) so that no two adjacent
-    vertices share the same color. Formally, it's defined by:
+    Formally, it's defined by:
     \begin{equation}
         \chi(G) = \min \{k \mid G \text{ is k-colorable} \}
     \end{equation}
@@ -199,27 +325,26 @@
 
     Dynamic graphs are an extension of traditional graph theory that deals with
     graphs in which the structure changes over time. These changes can include the
-    addition or deletion of vertices and edges, as well as changes in the weights
+    adding or removing of vertices and edges, as well as changes in the weights
     or labels of existing vertices and edges. Dynamic graphs are particularly
-    relevant in fields where the underlying relationships between entities are
+    relevant in fields where the basic relationships between entities are
     not static but evolve, such as social networks, traffic networks,
     telecommunications, and biological networks.
 
     \subsubsection{Key Concepts}
 
-    \textbf{Temporal Dimension} incorporate time as a fundamental component,
+    \textbf{Temporal Dimension} use time as a fundamental component,
     allowing for the exploration of how graph properties evolve. This temporal
     dimension distinguishes dynamic graphs from static graphs, where the
-    structure is fixed.\\
-    \\
+    structure is fixed.
+    
     Look at three \textbf{Types of Changes} in dynamic graphs. \textbf{Vertex Dynamics}
-    includes the addition or removal of nodes. Forinstance, new users joining a
+    includes the adding or removing of nodes. New users joining a
     social network or stations being added to a transport network.
-    \textbf{Edge Dynamics} involves the addition or removal of edges, which could
-    represent forming or dissolving relationships in a social network orchanges in
-    routes in a transportation system. \textbf{Attribute Changes} to the properties
-    or weights of the existing nodes and edges, such as changing bandwidth in
-    communication networks or fluctuating relationship strengths in social networks.\\
+    \textbf{Edge Dynamics} involves the adding or removing of edges, which could
+    represent forming or dissolving relationships in a social network or route changes in
+    transport system. \textbf{Attribute Changes} the properties and weights of vertices and edges,
+    such as changing bandwidth in communication networks or fluctuating relationship strengths in social networks.\\
     Discrete Time Models changes are modeled at specific time steps or intervals in oposite
     Continuous Time Models evolves the graph continuously over time, and changes can
     occur at any moment.
@@ -234,24 +359,22 @@
     and potentially complex dependencies between changes.
 
     \subsubsection{Problems and Algorithms in Dynamic Graphs}
-
     \textbf{Dynamic Connectivity} determines whether two vertices are connected by a path and how this
     connectivity changes over time. Efficient algorithms are required to update
-    connectivity information as the graph evolves.\\
-    \\
-    \textbf{Dynamic Shortest Paths} finding the shortest paths in a graph that changes over time is crucial
+    connectivity information as the graph evolves.
+    
+    \textbf{Dynamic Shortest Paths} is try to find the shortest paths in a graph that changes over time is crucial
     for applications like dynamic routing in transportation and communication
     networks. The problem of maintaining shortest paths in a dynamic graph, where edges
-    can be added, removed, or have their weights changed, can be mathematically
-    described as follows:\\
+    can be added, removed, or have their weights changed, can be described as follows:\\
     \\
     Distance Update After Edge Weight Change:
     \begin{equation}
         d(u, v) = \min(d(u, v), d(u, k) + w(k, v)),
     \end{equation}
-    where, \( d(u, v) \) represents the shortest distance from \( u \) to \( v \),
-    and \( w(k, v) \) represents the new weight of an edge that has been updated.\\
-    \\
+    where, \( d(u, v) \) represents the shortest path from \( u \) to \( v \),
+    and \( w(k, v) \) represents the new weight of an edge that has been updated.
+    
     \textbf{Community Detection} in social and biological networks, identifying groups or communities that
     change over time can provide insights into the underlying structure and
     dynamics of the network. The modularity \( Q \) at any time \( t \) can be
@@ -261,8 +384,8 @@
     \end{equation}
     where \( L_c \) is the number of edges within community \( c \), \( d_c \) is the
     sum of degrees of the nodes in \( c \), and \( L \) is the total number of edges
-    in the graph.\\
-    \\
+    in the graph.
+    
     \textbf{Network Resilience}
     analyzing how structural changes affect the stability and resilience of
     networks against failures or attacks.\\
@@ -276,10 +399,8 @@
     graph.\\
     Algebraic Connectivity (Fiedler Value):
     \begin{equation}
-        \lambda_2 = \min_{x \neq 0, x \perp \mathbf{1}} \frac{x^T L x}{x^T x}
+        \lambda_2 = \min_{x \neq 0} \frac{x^T L x}{x^T x}
     \end{equation}
-    The smaller \( \lambda_2 \) is, the less connected the graph is, indicating
-    lower resilience.
 
 \newpage
 
